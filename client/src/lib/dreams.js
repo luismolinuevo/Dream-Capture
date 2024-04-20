@@ -41,7 +41,7 @@ export const updatePost = async (data, dream_id) => {
         method: "PUT",
         headers: {
           "content-type": "application/json",
-        //   Authorization: `Bearer ${token}`,
+          //   Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(data),
       }
@@ -65,5 +65,29 @@ export const updatePost = async (data, dream_id) => {
     // Log more details about the error
     console.error("Error during editing dream:", error);
     throw error;
+  }
+};
+
+export const getAllDreams = async () => {
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/dreams`,
+      {
+        method: "GET",
+        headers: {
+          "content-type": "application/json",
+        //   Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+
+    if (response.ok) {
+      const res = await response.json();
+
+      return res;
+    }
+  } catch (error) {
+    console.log(error.message);
+    return error;
   }
 };
