@@ -2,7 +2,6 @@ import express from "express";
 import morgan from "morgan";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import { dot } from "node:test/reporters";
 dotenv.config();
 
 import { apiRouter } from "./routes/index.js";

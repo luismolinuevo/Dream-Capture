@@ -1,13 +1,14 @@
 import "./App.css";
-import Calendar from "./components/General/Calender"
+import Calendar from "./components/General/Calender";
 import SpeechToText from "./components/SpeechRecognition";
 
 function App() {
-
   return (
-    <div className="main">
+    <div className="">
       <SpeechToText />
-      <Calendar/>
+      <div className="flex justify-center">
+        <Calendar />
+      </div>
     </div>
   );
 }
