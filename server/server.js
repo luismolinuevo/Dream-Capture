@@ -1,10 +1,25 @@
 import express from "express";
 import morgan from "morgan";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+import { dot } from "node:test/reporters";
+dotenv.config();
+
+const DB_URL = process.env.DB_URL;
+dotenv.config();
 
 const app = express();
 
+mongoose.set("strictQuery", false);
+mongoose.set('bufferCommands', false);
+
+mongoose.connect(DB_URL);
+mongoose.connection.on('error', (err) => {
+  console.log(err);
+});
+
 app.use(express.json());
-app.use(morgan("tiny"))
+app.use(morgan("tiny"));
 
 
 app.listen(3002, () => {
