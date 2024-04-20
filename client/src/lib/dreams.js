@@ -1,12 +1,12 @@
-export const generateImages = async (data, token) => {
+export const createDream = async (data) => {
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/createImages`,
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/dream`,
         {
           method: "POST",
           headers: {
             "content-type": "application/json",
-            Authorization: `Bearer ${token}`,
+            // Authorization: `Bearer ${token}`,
           },
           body: JSON.stringify(data),
         }
@@ -14,13 +14,13 @@ export const generateImages = async (data, token) => {
   
       if (!response.ok) {
         console.error(
-          "Create images request request failed. Response status:",
+          "Create dream request request failed. Response status:",
           response.status
         );
         const errorData = await response.json();
         console.error("Error details:", errorData);
   
-        throw new Error("Create images request failed");
+        throw new Error("Create dream request failed");
       }
   
       // If the response is successful, return the data (if needed)
@@ -28,7 +28,7 @@ export const generateImages = async (data, token) => {
       return responseData;
     } catch (error) {
       // Log more details about the error
-      console.error("Error creating images:", error);
+      console.error("Error during creating dream:", error);
       throw error;
     }
   };
