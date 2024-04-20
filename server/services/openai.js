@@ -7,10 +7,9 @@ const configuration = {
 const openai = new OpenAI(configuration);
 
 export async function generateResponse(dream) {
-  // Validate input (if needed)
-
   try {
-    const response = await openai.images.generate({
+    if (dream) {
+      const response = await openai.images.generate({
         model: "dall-e-3",
         prompt: generatePrompt(dream),
         n: 4,
@@ -18,7 +17,8 @@ export async function generateResponse(dream) {
       });
 
       image_url = response.data[0].url;
-      console.log(image_url)
+      console.log(image_url);
+    }
     return image_url;
   } catch (error) {
     throw error;
@@ -27,6 +27,6 @@ export async function generateResponse(dream) {
 
 function generatePrompt(dream) {
   return `
-You respond with a max of 250 tokens, so you should keep your bullets straight to the point.
+So I want to you create a image of my dream. Im going to give you a description of my dream below
 ${dream}`;
 }
