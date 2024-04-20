@@ -5,6 +5,8 @@ import dotenv from "dotenv";
 import { dot } from "node:test/reporters";
 dotenv.config();
 
+import { apiRouter } from "./routes/index.js";
+
 const DB_URL = process.env.DB_URL;
 dotenv.config();
 
@@ -20,6 +22,8 @@ mongoose.connection.on('error', (err) => {
 
 app.use(express.json());
 app.use(morgan("tiny"));
+
+app.use("/api", apiRouter);
 
 
 app.listen(3002, () => {

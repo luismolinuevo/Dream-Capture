@@ -1,4 +1,6 @@
-const createDream = async () => {
+import Dream from "../models/dream.js";
+
+const createDream = async (req, res) => {
   try {
     const newDream = new Dream({
       dream: req.body.dream,
@@ -6,10 +8,18 @@ const createDream = async () => {
 
     const savedDream = await newDream.save();
 
-    res.status(201).json({
-        success: true,
-        savedDream
-    });
+    if(savedDream) {
+        res.status(201).json({
+            success: true,
+            savedDream
+        });
+    } else {
+        res.status(404).json({
+            success: false,
+            message: "Unable to create dream"
+        })
+    }
+
   } catch (error) {
     console.error(error);
   }
