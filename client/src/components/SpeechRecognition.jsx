@@ -38,7 +38,7 @@ const SpeechToText = () => {
 
   return (
     <div>
-      <button onClick={startListening}>Start Listening</button>
+      <button onClick={startListening} className='p-2 border border-black'>Start Listening</button>
       <button onClick={stopListening}>Stop Listening</button>
       <div>{transcribedText}</div>
     </div>
