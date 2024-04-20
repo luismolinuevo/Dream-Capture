@@ -5,5 +5,6 @@ const router = Router();
 
 router.post("/dream", dreamControllers.createDream);
 router.put("/dream/:id", dreamControllers.editDream);
+router.get("/dreams", dreamControllers.getDreams);
 
 export default router;

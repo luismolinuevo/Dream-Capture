@@ -41,13 +41,11 @@ const editDream = async (req, res) => {
 
     const updatedDream = await dream.save();
 
-    return res
-      .status(200)
-      .json({
-        success: true,
-        message: "Successfully edit dream",
-        updatedDream,
-      });
+    return res.status(200).json({
+      success: true,
+      message: "Successfully edit dream",
+      updatedDream,
+    });
   } catch (error) {
     console.log(error);
     res
@@ -56,4 +54,28 @@ const editDream = async (req, res) => {
   }
 };
 
-export { createDream, editDream };
+//get all dreams(for user in the future)
+const getDreams = async (req, res) => {
+  try {
+    const dreams = await Dream.find();
+
+    if (dreams) {
+      res.status(200).json({
+        success: true,
+        message: "Successfully fetched dreams",
+      });
+    } else {
+      res.status(204).json({
+        success: false,
+        message: "No post",
+      });
+    }
+  } catch (error) {
+    console.log(error);
+    res
+      .status(500)
+      .json({ error: "Internal Server Error", error, success: false });
+  }
+};
+
+export { createDream, editDream, getDreams };
