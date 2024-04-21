@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 
 function App() {
   return (
-    <Home/>
+    <Home />
     // <div className="">
     //   <SpeechToText />
     //   <div className="flex justify-center">
