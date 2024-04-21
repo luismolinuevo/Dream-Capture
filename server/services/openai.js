@@ -14,15 +14,17 @@ export async function generateResponse(dream) {
       const response = await openai.images.generate({
         model: "dall-e-3",
         prompt: generatePrompt(dream),
-        n: 4,
+        n: 1,
         size: "1024x1024",
       });
 
-      image_url = response.data[0].url;
+      const image_url = response.data[0].url;
       console.log(image_url);
+
+      return image_url;
     }
-    return image_url;
   } catch (error) {
+    console.log(error);
     throw error;
   }
 }

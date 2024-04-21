@@ -1,7 +1,7 @@
 export const generateImages = async (data) => {
   try {
     const response = await fetch(
-      `${import.meta.env.NEXT_PUBLIC_BACKEND_URL}/api/createImages`,
+      `${import.meta.env.VITE_PUBLIC_BACKEND_URL}/api/createImages`,
       {
         method: "POST",
         headers: {

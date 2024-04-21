@@ -5,7 +5,7 @@ export async function generateAdvice(req, res) {
     const dream = req.body.dream;
     if (dream) {
       const response = await generateResponse(dream);
-      console.log(response);
+      console.log("Here in controller" + response);
       if (response) {
         res.status(201).json({ result: response, success: true });
       } else {
