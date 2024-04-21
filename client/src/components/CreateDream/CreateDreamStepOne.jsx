@@ -10,9 +10,8 @@ export default function CreateDreamStepOne() {
 
   useEffect(() => {
     if (!isTranscribing && doneTranscribing && transcribedText.length > 0) {
-      // Save data to local storage
       localStorage.setItem("dreamTranscript", transcribedText);
-      navigate("/");
+      navigate("/reviewdream");
     }
   }, [isTranscribing, transcribedText, doneTranscribing]);
 

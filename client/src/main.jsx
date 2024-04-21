@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Home from "./pages/Home.jsx";
 import CreateDream from "./pages/CreateDream.jsx";
+import ConfirmCreateDream from "./pages/ConfirmCreateDream.jsx";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
     path: "/createdream",
     element: <CreateDream />,
   },
+  {
+    path: "/reviewdream",
+    element: <ConfirmCreateDream/>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
