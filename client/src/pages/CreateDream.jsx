@@ -1,5 +1,5 @@
 import React from "react";
-import CreatePostStepOne from "../components/CreatePost/CreatePostStepOne";
+import CreatePostStepOne from "../components/CreateDream/CreateDreamStepOne";
 
 export default function CreateDream() {
   return (
