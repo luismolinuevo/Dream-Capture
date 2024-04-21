@@ -20,7 +20,7 @@ export default function HomeComponent() {
   return (
     <div className="flex justify-center px-6">
       <div>
-        <h1 className="mt-18 text-[40px] text-center text-white">
+        <h1 className="mt-14 text-[40px] text-center text-white">
           Tell me your <br />
           <span className="text-[60px] text-purple-primary">Dream</span>
         </h1>
@@ -62,7 +62,7 @@ export default function HomeComponent() {
           </div>
         )}
         <div className="flex justify-center my-8">
-          <button className="text-white text-[40px] border px-9 py-1 rounded-[32px] bg-purple-primary">
+          <button className="text-white text-[40px] px-9 py-1 rounded-[32px] bg-purple-primary">
             Log dream
           </button>
         </div>
