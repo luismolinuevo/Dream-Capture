@@ -1,7 +1,7 @@
 export const createDream = async (data) => {
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/dream`,
+      `${import.meta.env.VITE_PUBLIC_BACKEND_URL}/api/dream`,
       {
         method: "POST",
         headers: {
@@ -76,7 +76,7 @@ export const getAllDreams = async () => {
         method: "GET",
         headers: {
           "content-type": "application/json",
-        //   Authorization: `Bearer ${token}`,
+          //   Authorization: `Bearer ${token}`,
         },
       }
     );
