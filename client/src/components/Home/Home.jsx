@@ -26,9 +26,9 @@ export default function HomeComponent() {
         </h1>
         <Calendar />
         {dreams && dreams.length > 0 ? (
-          dreams.map((dream) => (
+          dreams.map((dream, index) => (
             <p
-              key={dream.id}
+              key={index}
               className="px-2 py-1 border-2 border-purple-secondary text-[25px] font-semibold"
             >
               {dream?.createdAt}
