@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-const SpeechToText = () => {
-  const [transcribedText, setTranscribedText] = useState('');
+const SpeechToText = ({transcribedText, setTranscribedText}) => {
   const [error, setError] = useState('');
 
   // Check if SpeechRecognition is available
@@ -37,7 +36,7 @@ const SpeechToText = () => {
   };
 
   return (
-    <div>
+    <div className='bg-white h-[150px]'>
       <button onClick={startListening} className='p-2 border border-black'>Start Listening</button>
       <button onClick={stopListening}>Stop Listening</button>
       <div>{transcribedText}</div>
