@@ -9,6 +9,7 @@ export default function HomeComponent() {
       const data = await getAllDreams();
 
       if (data.success) {
+        console.log(data);
         setDreams(data.dreams);
       }
     };

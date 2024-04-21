@@ -36,7 +36,7 @@ export const createDream = async (data) => {
 export const updatePost = async (data, dream_id) => {
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/dreams/${dream_id}`,
+      `${import.meta.env.VITE_PUBLIC_BACKEND_URL}/api/dreams/${dream_id}`,
       {
         method: "PUT",
         headers: {
@@ -71,7 +71,7 @@ export const updatePost = async (data, dream_id) => {
 export const getAllDreams = async () => {
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/dreams`,
+      `${import.meta.env.VITE_PUBLIC_BACKEND_URL}/api/dreams`,
       {
         method: "GET",
         headers: {
@@ -87,7 +87,7 @@ export const getAllDreams = async () => {
       return res;
     }
   } catch (error) {
-    console.log(error.message);
+    console.log("Error getting all dreams", error.message);
     return error;
   }
 };
