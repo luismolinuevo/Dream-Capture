@@ -1,6 +1,6 @@
 import "./App.css";
 import Calendar from "./components/General/Calender";
-import SpeechToText from "./components/SpeechRecognition";
+import SpeechToText from "./components/CreateDream/SpeechRecognition";
 import Home from "./pages/Home";
 
 function App() {

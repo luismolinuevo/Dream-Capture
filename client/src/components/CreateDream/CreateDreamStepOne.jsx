@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SpeechToText from "../SpeechRecognition";
+import SpeechToText from "./SpeechRecognition";
 import { useNavigate } from "react-router-dom";
 
 export default function CreateDreamStepOne() {
