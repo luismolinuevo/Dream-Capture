@@ -20,16 +20,19 @@ export default function HomeComponent() {
   return (
     <div className="flex justify-center px-6">
       <div>
-        <h1 className="mt-24 text-[40px] text-center text-white">
+        <h1 className="mt-18 text-[40px] text-center text-white">
           Tell me your <br />
           <span className="text-[60px] text-purple-primary">Dream</span>
         </h1>
-        <Calendar />
+        <div className="flex justify-center">
+          <Calendar />
+        </div>
+
         {dreams && dreams.length > 0 ? (
           dreams.map((dream, index) => (
             <p
               key={index}
-              className="px-2 py-1 border-2 border-purple-secondary text-[25px] font-semibold"
+              className="p-5 border-2 border-purple-secondary text-[20px] rounded-2xl font-semibold text-white"
             >
               {dream?.createdAt}
             </p>
@@ -40,7 +43,7 @@ export default function HomeComponent() {
         {dreams.length > 0 && (
           <div className="flex justify-center">
             <button className="flex justify-center items-center">
-              <p className="w-[180px] text-[24px] text-purple-secondary font-semibold">
+              <p className="w-[180px] text-[20px] text-purple-secondary font-semibold">
                 load more
               </p>
               <svg
