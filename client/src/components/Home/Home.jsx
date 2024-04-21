@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Calendar from "../General/Calender";
 import { getAllDreams } from "../../lib/dreams";
+import { Link } from "react-router-dom";
 
 export default function HomeComponent() {
   const [dreams, setDreams] = useState([]);
@@ -32,7 +33,7 @@ export default function HomeComponent() {
           dreams.map((dream, index) => (
             <p
               key={index}
-              className="p-5 border-2 border-purple-secondary text-[20px] rounded-2xl font-semibold text-white"
+              className="p-5 border-2 border-purple-secondary text-[20px] rounded-2xl font-semibold text-white block"
             >
               {dream?.createdAt}
             </p>
@@ -62,9 +63,12 @@ export default function HomeComponent() {
           </div>
         )}
         <div className="flex justify-center my-8">
-          <button className="text-white text-[40px] px-9 py-1 rounded-[32px] bg-purple-primary">
+          <Link
+            className="text-white text-[40px] px-9 py-1 rounded-[32px] bg-purple-primary"
+            to="/createdream"
+          >
             Log dream
-          </button>
+          </Link>
         </div>
       </div>
     </div>
