@@ -37,7 +37,7 @@ export default function Home() {
         )}
         <div className="flex justify-center">
           <button className="flex justify-center items-center">
-            <p className="w-[150px]">load more</p>
+            <p className="w-[180px] text-[20px]">load more</p>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25">
               <path
                 style={{ fill: "#232326" }}
@@ -48,7 +48,7 @@ export default function Home() {
           </button>
         </div>
         <div className="flex justify-center">
-          <button className="text-white text-[35px] border px-3 py-1 rounded-xl">
+          <button className="text-white text-[40px] border px-9 py-1 rounded-[32px] bg-purple-primary">
             Log dream
           </button>
         </div>
