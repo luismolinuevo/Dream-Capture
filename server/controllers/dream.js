@@ -63,6 +63,7 @@ const getDreams = async (req, res) => {
       res.status(200).json({
         success: true,
         message: "Successfully fetched dreams",
+        dreams
       });
     } else {
       res.status(204).json({
